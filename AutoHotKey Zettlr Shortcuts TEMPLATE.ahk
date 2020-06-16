@@ -111,13 +111,30 @@ return
     FormatTime, CurrentDateTime,, yyyyMMddHHmm ;(add 'ss' to the end if using seconds)
     id=%CurrentDateTime%
 
+  ;Create date string
+    FormatTime, CurrentDate,, yyyy-MM-dd
+    date=%CurrentDate%
+
   ;YAML Layout (modify as needed)  
     Send, 
     (
 ---
 id: %id%
 title:
----
+date: %date%
+tags: []
+---  
     )
 return
+
+;Rename File as Highlighted Text
+
+  ;Shortcut (CTRL + ALT + R)
+  ^!R::
+
+  ;Copy current file name to clipboard using Zettlr GUI and shortcut
+    Send {Ctrl down}{c}{Ctrl up}
+    Send {Ctrl down}{r}{Ctrl up}
+    Send {Ctrl down}{v}{Ctrl up}
+    Send {Enter}
 
