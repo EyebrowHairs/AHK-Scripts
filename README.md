@@ -1,2 +1,2 @@
 # AHK Scripts
- useful AHK scripts
+Useful AutoHotkey scripts to use with Zettlr. 
